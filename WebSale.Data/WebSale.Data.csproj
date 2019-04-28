@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D77219D7-DBB1-456B-A244-3F08E767A503}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebSale.Data</RootNamespace>
+    <AssemblyName>WebSale.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IReponsitory.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\ReponsitoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201902231336037_WebSaleDB.cs" />
+    <Compile Include="Migrations\201902231336037_WebSaleDB.Designer.cs">
+      <DependentUpon>201902231336037_WebSaleDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903031328245_ChangeTypeForCountViewProperty.cs" />
+    <Compile Include="Migrations\201903031328245_ChangeTypeForCountViewProperty.Designer.cs">
+      <DependentUpon>201903031328245_ChangeTypeForCountViewProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903031550449_Intergrate-apsnetIdentity.cs" />
+    <Compile Include="Migrations\201903031550449_Intergrate-apsnetIdentity.Designer.cs">
+      <DependentUpon>201903031550449_Intergrate-apsnetIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903111833374_tham.cs" />
+    <Compile Include="Migrations\201903111833374_tham.Designer.cs">
+      <DependentUpon>201903111833374_tham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080632122_deleteUpdatedDateAtProductTable.cs" />
+    <Compile Include="Migrations\201904080632122_deleteUpdatedDateAtProductTable.Designer.cs">
+      <DependentUpon>201904080632122_deleteUpdatedDateAtProductTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904120424218_AddInforUserToLogin.cs" />
+    <Compile Include="Migrations\201904120424218_AddInforUserToLogin.Designer.cs">
+      <DependentUpon>201904120424218_AddInforUserToLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904120429340_AddInforUserToLoginAndCategory.cs" />
+    <Compile Include="Migrations\201904120429340_AddInforUserToLoginAndCategory.Designer.cs">
+      <DependentUpon>201904120429340_AddInforUserToLoginAndCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904160740398_AddDataForSlideTable.cs" />
+    <Compile Include="Migrations\201904160740398_AddDataForSlideTable.Designer.cs">
+      <DependentUpon>201904160740398_AddDataForSlideTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904210738246_addDataForPageTable.cs" />
+    <Compile Include="Migrations\201904210738246_addDataForPageTable.Designer.cs">
+      <DependentUpon>201904210738246_addDataForPageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904220322590_AddDataForContactDetailTable.cs" />
+    <Compile Include="Migrations\201904220322590_AddDataForContactDetailTable.Designer.cs">
+      <DependentUpon>201904220322590_AddDataForContactDetailTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904240406461_addPriceColumnForOrderDetailTable.cs" />
+    <Compile Include="Migrations\201904240406461_addPriceColumnForOrderDetailTable.Designer.cs">
+      <DependentUpon>201904240406461_addPriceColumnForOrderDetailTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904250825175_AddMoreFieldForOrderTabl.cs" />
+    <Compile Include="Migrations\201904250825175_AddMoreFieldForOrderTabl.Designer.cs">
+      <DependentUpon>201904250825175_AddMoreFieldForOrderTabl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904280243202_RevenuesStatisticSP.cs" />
+    <Compile Include="Migrations\201904280243202_RevenuesStatisticSP.Designer.cs">
+      <DependentUpon>201904280243202_RevenuesStatisticSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reponsitories\ApplicationGroupRepository.cs" />
+    <Compile Include="Reponsitories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Reponsitories\ApplicationRoleRepository.cs" />
+    <Compile Include="Reponsitories\ApplicationUserGroupRepository.cs" />
+    <Compile Include="Reponsitories\ContactDetailRepository.cs" />
+    <Compile Include="Reponsitories\ErrorRepository.cs" />
+    <Compile Include="Reponsitories\FeedbackRepository.cs" />
+    <Compile Include="Reponsitories\FooterRepository.cs" />
+    <Compile Include="Reponsitories\MenuRepository.cs" />
+    <Compile Include="Reponsitories\OrderDetailRepository.cs" />
+    <Compile Include="Reponsitories\OrderRepository.cs" />
+    <Compile Include="Reponsitories\PageRepository.cs" />
+    <Compile Include="Reponsitories\PostCategoryRepository.cs" />
+    <Compile Include="Reponsitories\PostRepository.cs" />
+    <Compile Include="Reponsitories\PostTagRepository.cs" />
+    <Compile Include="Reponsitories\ProductCategoryRepository.cs" />
+    <Compile Include="Reponsitories\ProductRepository.cs" />
+    <Compile Include="Reponsitories\ProductTagRepository.cs" />
+    <Compile Include="Reponsitories\SlideRepository.cs" />
+    <Compile Include="Reponsitories\SupportOnlineRepository.cs" />
+    <Compile Include="Reponsitories\SystemConfigRepository.cs" />
+    <Compile Include="Reponsitories\TagRepository.cs" />
+    <Compile Include="Reponsitories\VisitorStatisticRepository.cs" />
+    <Compile Include="WebSaleDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebSale.Common\WebSale.Common.csproj">
+      <Project>{19027100-bb06-46ad-bcdc-239b8bdf35be}</Project>
+      <Name>WebSale.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebSale.Model\WebSale.Model.csproj">
+      <Project>{a8c0d3d3-ea37-414b-9643-89b2e7d71a29}</Project>
+      <Name>WebSale.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201902231336037_WebSaleDB.resx">
+      <DependentUpon>201902231336037_WebSaleDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031328245_ChangeTypeForCountViewProperty.resx">
+      <DependentUpon>201903031328245_ChangeTypeForCountViewProperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903031550449_Intergrate-apsnetIdentity.resx">
+      <DependentUpon>201903031550449_Intergrate-apsnetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903111833374_tham.resx">
+      <DependentUpon>201903111833374_tham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080632122_deleteUpdatedDateAtProductTable.resx">
+      <DependentUpon>201904080632122_deleteUpdatedDateAtProductTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904120424218_AddInforUserToLogin.resx">
+      <DependentUpon>201904120424218_AddInforUserToLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904120429340_AddInforUserToLoginAndCategory.resx">
+      <DependentUpon>201904120429340_AddInforUserToLoginAndCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904160740398_AddDataForSlideTable.resx">
+      <DependentUpon>201904160740398_AddDataForSlideTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904210738246_addDataForPageTable.resx">
+      <DependentUpon>201904210738246_addDataForPageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904220322590_AddDataForContactDetailTable.resx">
+      <DependentUpon>201904220322590_AddDataForContactDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904240406461_addPriceColumnForOrderDetailTable.resx">
+      <DependentUpon>201904240406461_addPriceColumnForOrderDetailTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904250825175_AddMoreFieldForOrderTabl.resx">
+      <DependentUpon>201904250825175_AddMoreFieldForOrderTabl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904280243202_RevenuesStatisticSP.resx">
+      <DependentUpon>201904280243202_RevenuesStatisticSP.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

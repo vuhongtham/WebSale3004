@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    ViewBag.MetaKeyword = @Model.Name;
+    ViewBag.MetaDescription = Model.Name;
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div class="single_top">
+    <div class="single_grid">
+        <h1>@Model.Name</h1>
+        @Html.Raw(Model.Content)
+        <div class="clearfix"> </div>
+    </div>
+</div>
